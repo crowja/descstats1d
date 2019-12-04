@@ -1,2 +1,4 @@
-# descstats1d
-Helper functions for descriptive statistics of 1d data.
+# descstats1d 0.0.0
+
+Helper functions for descriptive statistics.
+
