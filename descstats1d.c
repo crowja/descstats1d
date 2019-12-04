@@ -1,6 +1,6 @@
 /**
  *  @file descstats1d.c
- *  @version 0.0.0
+ *  @version 0.1.0-dev0
  *  @date %TODAY%
  *  @copyright %COPYRIGHT%
  *  @brief FIXME
@@ -168,7 +168,7 @@ descstats1d_order(const unsigned len, double *x)
 const char *
 descstats1d_version(void)
 {
-   return "0.0.0";
+   return "0.1.0-dev0";
 }
 
 
