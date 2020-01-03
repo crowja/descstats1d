@@ -1,10 +1,9 @@
 /**
  *  @file descstats1d.c
  *  @version 0.1.0-dev0
- *  @date %TODAY%
- *  @copyright %COPYRIGHT%
- *  @brief FIXME
- *  @details FIXME
+ *  @date Thu Jan  2 19:54:30 CST 2020
+ *  @copyright 2020 John A. Crow <crowja@gmail.com>
+ *  @license Unlicense <http://unlicense.org/>
  */
 
 #include <stdlib.h>
