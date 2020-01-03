@@ -1,6 +1,6 @@
 /**
  *  @file descstats1d.c
- *  @version 0.1.0-dev0
+ *  @version 0.2.0-dev0
  *  @date Thu Jan  2 19:54:30 CST 2020
  *  @copyright 2020 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
@@ -167,7 +167,7 @@ descstats1d_order(const unsigned len, double *x)
 const char *
 descstats1d_version(void)
 {
-   return "0.1.0-dev0";
+   return "0.2.0-dev0";
 }
 
 
