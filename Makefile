@@ -49,13 +49,17 @@ echeck: descstats1d.o
 	  && ( LD_PRELOAD=libefence.so ./t/a.out ) ; \
 	done 
 
-indent:
+indent: stamp
 	@indent $(INDENT_FLAGS) descstats1d.c
 	@indent $(INDENT_FLAGS) descstats1d.h
 	@for i in $(TESTS); \
 	do \
 	  indent $(INDENT_FLAGS) $$i.c; \
 	done
+
+stamp:
+	@stamper.bash descstats1d.c
+	@stamper.bash descstats1d.h
 
 clean:
 	@/bin/rm -f descstats1d.o *.o *~ *.BAK *.bak core.* a.out
