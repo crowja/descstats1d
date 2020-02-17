@@ -9,6 +9,7 @@ LDFLAGS = -lm
 LDFLAGS_EFENCE = -L/usr/lib -lefence $(LDFLAGS)
 #VALGRIND_FLAGS = --verbose --leak-check=full --undef-value-errors=yes --track-origins=yes
 VALGRIND_FLAGS = --leak-check=full --undef-value-errors=yes
+STAMPER = stamper
 
 INDENT_FLAGS = -TFILE -Tsize_t -Tuint8_t
 
@@ -49,7 +50,7 @@ echeck: descstats1d.o
 	  && ( LD_PRELOAD=libefence.so ./t/a.out ) ; \
 	done 
 
-indent: stamp
+indent:
 	@indent $(INDENT_FLAGS) descstats1d.c
 	@indent $(INDENT_FLAGS) descstats1d.h
 	@for i in $(TESTS); \
@@ -58,8 +59,8 @@ indent: stamp
 	done
 
 stamp:
-	@stamper.bash descstats1d.c
-	@stamper.bash descstats1d.h
+	@$(STAMPER) descstats1d.c
+	@$(STAMPER) descstats1d.h
 
 clean:
 	@/bin/rm -f descstats1d.o *.o *~ *.BAK *.bak core.* a.out

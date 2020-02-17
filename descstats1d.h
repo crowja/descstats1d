@@ -1,19 +1,13 @@
 /**
  *  @file descstats1d.h
  *  @version 0.2.0-dev0
- *  @date Thu Jan  2 19:54:30 CST 2020
+ *  @date Sun Feb 16, 2020 08:38:44 PM CST
  *  @copyright 2020 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
  */
 
-#ifndef _DESCSTATS_H_
-#define _DESCSTATS_H_
-
-#ifdef  _PACKAGE_NAME
-#undef  _PACKAGE_NAME
-#endif
-#define _PACKAGE_NAME "descstats1d"
-
+#ifndef DESCSTATS_H
+#define DESCSTATS_H
 
 /**
  *  @brief FIXME Example function.

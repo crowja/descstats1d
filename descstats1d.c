@@ -1,7 +1,7 @@
 /**
  *  @file descstats1d.c
  *  @version 0.2.0-dev0
- *  @date Thu Jan  2 19:54:30 CST 2020
+ *  @date Sun Feb 16, 2020 08:38:44 PM CST
  *  @copyright 2020 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
  */
@@ -12,15 +12,15 @@
 #include <float.h>
 #include "descstats1d.h"
 
-#ifdef  _IS_NULL
-#undef  _IS_NULL
+#ifdef  IS_NULL
+#undef  IS_NULL
 #endif
-#define _IS_NULL(p)   ((NULL == (p)) ? (1) : (0))
+#define IS_NULL(p)   ((NULL == (p)) ? (1) : (0))
 
-#ifdef  _FREE
-#undef  _FREE
+#ifdef  FREE
+#undef  FREE
 #endif
-#define _FREE(p)      ((NULL == (p)) ? (0) : (free((p)), (p) = NULL))
+#define FREE(p)      ((NULL == (p)) ? (0) : (free((p)), (p) = NULL))
 
 /* Comparator used by descstats1d_order() */
 
@@ -171,5 +171,5 @@ descstats1d_version(void)
 }
 
 
-#undef _IS_NULL
-#undef _FREE
+#undef IS_NULL
+#undef FREE

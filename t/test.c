@@ -6,31 +6,31 @@
 #include "tinytest.h"
 
 
-#ifdef _COLOR_CODE
-#undef _COLOR_CODE
+#ifdef COLOR_CODE
+#undef COLOR_CODE
 #endif
-#define _COLOR_CODE      0x1B
-#ifdef _COLOR_RED
-#undef _COLOR_RED
+#define COLOR_CODE      0x1B
+#ifdef COLOR_RED
+#undef COLOR_RED
 #endif
-#define _COLOR_RED       "[1;31m"
-#ifdef _COLOR_GREEN
-#undef _COLOR_GREEN
+#define COLOR_RED       "[1;31m"
+#ifdef COLOR_GREEN
+#undef COLOR_GREEN
 #endif
-#define _COLOR_GREEN     "[1;32m"
-#ifdef _COLOR_YELLOW
-#undef _COLOR_YELLOW
+#define COLOR_GREEN     "[1;32m"
+#ifdef COLOR_YELLOW
+#undef COLOR_YELLOW
 #endif
-#define _COLOR_YELLOW    "[1;33m"
-#ifdef _COLOR_RESET
-#undef _COLOR_RESET
+#define COLOR_YELLOW    "[1;33m"
+#ifdef COLOR_RESET
+#undef COLOR_RESET
 #endif
-#define _COLOR_RESET     "[0m"
+#define COLOR_RESET     "[0m"
 
 static void
-_printf_test_name(char *name, char *info)
+printf_test_name(char *name, char *info)
 {
-   printf("%c%s%s%c%s", _COLOR_CODE, _COLOR_YELLOW, name, _COLOR_CODE, _COLOR_RESET);
+   printf("%c%s%s%c%s", COLOR_CODE, COLOR_YELLOW, name, COLOR_CODE, COLOR_RESET);
 
    if (NULL != info)
       printf(" [%s]\n", info);
@@ -47,7 +47,7 @@ test_cmean(void)
    double     *wrk = malloc(9 * sizeof(double));
    double      mean, var;
 
-   _printf_test_name("test_cmean()", NULL);
+   printf_test_name("test_cmean()", NULL);
 
    descstats1d_cmean(9, x, wrk, &mean, &var);
    ASSERT("cmean x test mean", fabs(mean - 0.0) < 4 * DBL_EPSILON);
@@ -71,7 +71,7 @@ test_mean(void)
    double      y[8] = { 4, 3, 2, 1, -1, -2, -3, -4 };
    double      mean, var;
 
-   _printf_test_name("test_mean()", NULL);
+   printf_test_name("test_mean()", NULL);
 
    descstats1d_mean(9, x, &mean, &var);
    ASSERT("mean x test mean", fabs(mean - 0.0) < 4 * DBL_EPSILON);
@@ -90,7 +90,7 @@ test_median(void)
    double      median, mad;
    double     *wrk = malloc(9 * sizeof(double));
 
-   _printf_test_name("test_median()", NULL);
+   printf_test_name("test_median()", NULL);
 
    descstats1d_median(9, x, wrk, &median, &mad, 0);
    ASSERT("median x test median", fabs(median - 0.0) < 4 * DBL_EPSILON);
@@ -110,7 +110,7 @@ test_min_max(void)
    double     *x = malloc(sizeof(double) * 10000);
    double      max, min;
 
-   _printf_test_name("test_min_max()", NULL);
+   printf_test_name("test_min_max()", NULL);
 
    for (i = 0; i < 10000; i++)
       x[i] = 0.5 * (i % 5 - 2);
@@ -127,7 +127,7 @@ test_order(void)
 {
    double      x[9] = { 4, 3, 2, 1, 0, -1, -2, -3, -4 };
 
-   _printf_test_name("test_order()", NULL);
+   printf_test_name("test_order()", NULL);
 
    descstats1d_order(9, x);
 
@@ -151,7 +151,7 @@ test_stub(void)
    int         i;
    double      x[9] = { 4, 3, 2, 1, 0, -1, -2, -3, -4 };
 
-   _printf_test_name("test_order()", NULL);
+   printf_test_name("test_order()", NULL);
 
    descstats1d_order(9, x);
 
